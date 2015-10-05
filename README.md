@@ -2,8 +2,9 @@
 
 Knacked Up! helps people looking to trade 8 hours of work for either a Recommendation on LinkedIn, or feedback on how to improve.
 
-## Motto
- Get hooked up with 8 hours of work and turn a hobby into a career.
+## Backstory
+Before I got into programming, I went to lots of interviews. I went door to door, passing my resume out to anyone who would feign interest. After a series of failed interviews, I asked someone in HR why she wouldn't hire me, and she was nice enough to give me some helpful advice. I bought a book on how to interview, read the book, went to an interview the next day and got my very first job out of college. Small moments of direct advice can make a big difference in the lives of others.
+ 
 ## Motto
  Get hooked up with 8 hours of work and turn a hobby into a career.
 
