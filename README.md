@@ -5,8 +5,10 @@ Knacked Up! helps people looking to trade 8 hours of work for a a Recommendation
 ## Motto
  Get hooked up with 8 hours of work and turn a hobby into a career.
 
-## Why did I build it?
-To be honest, just to learn some new frameworks and Google's PaaS. This project now serves the needs of a 'seed' application, helping others to kick-start their development efforts.
+## What is it?
+- Past: I was interested in learning some new frameworks and this project gives me the chance to experiment with about Google's PaaS. 
+- Present: This project now serves the needs of a Seed Application, helping others to kick-start their development efforts.
+- Future: I'll be updating the libraries, adding frameworks and services as the needs arise. If there's something you wish to add or fix, feel free to fork the project and send me a pull request.
 
 ## Stack
 * AngularJS (1.x)
@@ -20,6 +22,7 @@ To be honest, just to learn some new frameworks and Google's PaaS. This project 
 * Hibernate Validation
 * Maven
 * Twitter Bootstrap
+* Toastr
 
 ## Setup
 1. Import the project into Eclipse.
