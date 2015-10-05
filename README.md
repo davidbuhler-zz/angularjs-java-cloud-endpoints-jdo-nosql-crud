@@ -1,7 +1,9 @@
 # Knacked Up!
 
-Knacked Up! helps people looking to trade 8 hours of work for a a Recommendation on LinkedIn, or feedback on how to improve.
+Knacked Up! helps people looking to trade 8 hours of work for either a Recommendation on LinkedIn, or feedback on how to improve.
 
+## Motto
+ Get hooked up with 8 hours of work and turn a hobby into a career.
 ## Motto
  Get hooked up with 8 hours of work and turn a hobby into a career.
 
