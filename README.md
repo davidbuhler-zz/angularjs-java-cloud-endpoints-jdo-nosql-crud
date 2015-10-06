@@ -1,6 +1,6 @@
-# Knacked Up! - An Open Source Application
+### Knacked Up! An Open Source Application
 
-###Trade 8 hours of work for a Recommendation or Guidance
+#####Trade 8 hours of work for a Recommendation or Guidance
 
 ## Website
 https://knackedupapp.appspot.com
