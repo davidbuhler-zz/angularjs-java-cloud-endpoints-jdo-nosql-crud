@@ -1,0 +1,63 @@
+<div ng-cloak ng-controller="PropositionEditController" ng-init="init();data.termsAccepted=false">
+    <div class="page-header">
+        <h1>Get KnackedUp
+            <small>Make a Proposition</small>
+        </h1>
+    </div>
+    <form class="css-form" ng-model="data" novalidate role="form" name="form" id="form">
+        <legend ng-show="data.propositionId==null">Add</legend>
+        <legend ng-show="data.propositionId!=null">Edit</legend>
+
+        <p>Send a Proposition to the sponsor. The proposition should describe who you are, what your knack is, and why you are the perfect candidate for the job.</p>
+
+        <div class="form-group">
+            <label for="titleInput" class="control-label">Proposition</label>
+            <input type="text" id="titleInput" ng-model="data.title" class="form-control" name="title"
+                   placeholder="E.g. I am very hard working, Passionate about design, Easy to work with"
+                   ng-minlength="5" ng-maxlength="50" focus-me="true" required/>
+            <span ng-show="submitted && form.title.$error.minlength" class="error-box">Proposition is too short</span>
+            <span ng-show="submitted && form.title.$error.maxlength" class="error-box">Proposition is too long</span>
+            <span ng-show="submitted && form.title.$error.required" class="error-box">Proposition is required</span>
+            <span class="help-inline">Sell yourself for the quickie in a single statement</span>
+        </div>
+
+        <div class="form-group">
+            <label for="knackInput" class="control-label">Knack</label>
+            <textarea rows="6"
+                      id="knackInput"
+                      type="text"
+                      ng-model="data.knack"
+                      class="form-control"
+                      name="knack"
+                      placeholder="E.g. Love coding PHP. Strong editing skills. Proof-reading greatness."
+                      ng-minlength="10"
+                      ng-maxlength="500" required></textarea>
+            <span ng-show="submitted && form.knack.$error.minlength" class="error-box">Knack is too short</span>
+            <span ng-show="submitted && form.knack.$error.maxlength" class="error-box">Knack is too long</span>
+            <span ng-show="submitted && form.knack.$error.required" class="error-box">Knack is required</span>
+            <span class="help-inline">Describe your Knack. Give some examples of strengths and passion related to the quickie.</span>
+        </div>
+
+        <div class="form-group">
+            <label for="profileURLInput" class="control-label">LinkedIn Profile Link</label>
+            <input type="text" id="profileURLInput" ng-model="data.profileURL" class="form-control" ng-pattern="/^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)/"
+                   name="profileURL" placeholder="E.g. https://www.linkedin.com/in/dbuhler" ng-minlength="25"
+                   ng-maxlength="100" required/>
+            <span ng-show="submitted && form.profileURL.$error.minlength" class="error-box">LinkedIn Profile URL is too short</span>
+            <span ng-show="submitted && form.profileURL.$error.maxlength" class="error-box">LinkedIn Profile URL is too long</span>
+            <span ng-show="submitted && form.profileURL.$error.required" class="error-box">LinkedIn Profile URL is required</span>
+            <span ng-show="submitted && form.profileURL.$error.pattern" class="error-box">LinkedIn Profile URL is not a valid format</span>
+            <span class="help-inline">Your LinkedIn Profile URL</span>
+        </div>
+
+        <label class="checkbox">
+            <input type="checkbox" ng-model="data.termsAccepted" id="termsCheckBox" name="termsCheckBox"
+                   ng-checked="data.termsAccepted">I Agree to the Terms of Service
+            <span ng-show="submitted && !data.termsAccepted" class="error-box">Terms not accepted</span>
+        </label>
+
+        <div class="clearfix controlbar">
+            <button ng-click="save()" ng-enter="save()" class="btn btn-success pull-right"><span class="glyphicon glyphicon-send"></span>&#032;Send Proposition&#032;</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,559 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://knackedupapp.appspot.com/_ah/api",
+  "name" : "knackedupapp",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://knackedupapp.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "knackedupapp.proposition.delete" : {
+      "path" : "quickie/{quickieId}/proposition/{propositionId}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.PropositionEndpoint.remove",
+      "request" : {
+        "parameters" : {
+          "quickieId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "propositionId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.proposition.get" : {
+      "path" : "quickie/{quickieId}/proposition/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.PropositionEndpoint.get",
+      "request" : {
+        "parameters" : {
+          "propositionId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.proposition.list" : {
+      "path" : "quickie/{quickieId}/propositions",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.PropositionEndpoint.list",
+      "request" : {
+        "parameters" : {
+          "quickieId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.proposition.insert" : {
+      "path" : "quickie/{quickieId}/proposition",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.PropositionEndpoint.insert",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.quickie.update" : {
+      "path" : "quickie",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.QuickieEndpoint.updateQuickie",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.quickie.list" : {
+      "path" : "quickie",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.QuickieEndpoint.listQuickies",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.quickie.delete" : {
+      "path" : "quickie/{quickieId}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.QuickieEndpoint.removeQuickie",
+      "request" : {
+        "parameters" : {
+          "quickieId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "knackedupapp.quickie.search" : {
+      "path" : "searchQuickie/{term}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.QuickieEndpoint.searchQuickie",
+      "request" : {
+        "parameters" : {
+          "term" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.quickie.get" : {
+      "path" : "quickie/{quickieId}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.QuickieEndpoint.getQuickie",
+      "request" : {
+        "parameters" : {
+          "quickieId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.quickie.insert" : {
+      "path" : "quickie",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.QuickieEndpoint.insertQuickie",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.user.get" : {
+      "path" : "member/{googleId}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.UserEndpoint.get",
+      "request" : {
+        "parameters" : {
+          "googleId" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.user.save" : {
+      "path" : "save/{accessToken}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.UserEndpoint.save",
+      "request" : {
+        "parameters" : {
+          "accessToken" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.user.quickie.list" : {
+      "path" : "user.quickies",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.UserEndpoint.listUserQuickies",
+      "request" : {
+        "parameters" : {
+          "limit" : {
+            "type" : "string",
+            "required" : false
+          },
+          "order" : {
+            "type" : "string",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "knackedupapp.flag.insert" : {
+      "path" : "quickie/{quickieId}/details",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495779795698-vbebu2hji4r9eelps3hjsshafhgusskk.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.knackedup.endpoints.FlagEndpoint.insert",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Proposition" : {
+        "id" : "Proposition",
+        "type" : "object",
+        "properties" : {
+          "knack" : {
+            "type" : "string"
+          },
+          "profileURL" : {
+            "type" : "string"
+          },
+          "quickieId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "termsAccepted" : {
+            "type" : "boolean"
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "suitorId" : {
+            "type" : "string"
+          },
+          "propositionId" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "CollectionResponse_Proposition" : {
+        "id" : "CollectionResponse_Proposition",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Proposition"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Quickie" : {
+        "id" : "Quickie",
+        "type" : "object",
+        "properties" : {
+          "description" : {
+            "type" : "string"
+          },
+          "organization" : {
+            "type" : "string"
+          },
+          "profileURL" : {
+            "type" : "string"
+          },
+          "quickieId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "quickieName" : {
+            "type" : "string"
+          },
+          "sponsorId" : {
+            "type" : "string"
+          },
+          "termsAccepted" : {
+            "type" : "boolean"
+          },
+          "userId" : {
+            "type" : "string"
+          },
+          "organizationName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_Quickie" : {
+        "id" : "CollectionResponse_Quickie",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Quickie"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "QuickieCollection" : {
+        "id" : "QuickieCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Quickie"
+            }
+          }
+        }
+      },
+      "Member" : {
+        "id" : "Member",
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "string"
+          },
+          "familyName" : {
+            "type" : "string"
+          },
+          "givenName" : {
+            "type" : "string"
+          },
+          "googleId" : {
+            "type" : "string"
+          },
+          "hd" : {
+            "type" : "string"
+          },
+          "memberId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "locale" : {
+            "type" : "string"
+          },
+          "pictureURL" : {
+            "type" : "string"
+          },
+          "verifiedEmail" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "Flag" : {
+        "id" : "Flag",
+        "type" : "object",
+        "properties" : {
+          "quickieId" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.knackedup.endpoints.PropositionEndpoint.remove" : {
+        "response" : {
+          "$ref" : "Proposition"
+        }
+      },
+      "com.knackedup.endpoints.PropositionEndpoint.get" : {
+        "response" : {
+          "$ref" : "Proposition"
+        }
+      },
+      "com.knackedup.endpoints.PropositionEndpoint.list" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Proposition"
+        }
+      },
+      "com.knackedup.endpoints.PropositionEndpoint.insert" : {
+        "request" : {
+          "$ref" : "Proposition"
+        },
+        "response" : {
+          "$ref" : "Proposition"
+        }
+      },
+      "com.knackedup.endpoints.QuickieEndpoint.updateQuickie" : {
+        "request" : {
+          "$ref" : "Quickie"
+        },
+        "response" : {
+          "$ref" : "Quickie"
+        }
+      },
+      "com.knackedup.endpoints.QuickieEndpoint.listQuickies" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Quickie"
+        }
+      },
+      "com.knackedup.endpoints.QuickieEndpoint.removeQuickie" : {
+      },
+      "com.knackedup.endpoints.QuickieEndpoint.searchQuickie" : {
+        "response" : {
+          "$ref" : "QuickieCollection"
+        }
+      },
+      "com.knackedup.endpoints.QuickieEndpoint.getQuickie" : {
+        "response" : {
+          "$ref" : "Quickie"
+        }
+      },
+      "com.knackedup.endpoints.QuickieEndpoint.insertQuickie" : {
+        "request" : {
+          "$ref" : "Quickie"
+        },
+        "response" : {
+          "$ref" : "Quickie"
+        }
+      },
+      "com.knackedup.endpoints.UserEndpoint.get" : {
+        "response" : {
+          "$ref" : "Member"
+        }
+      },
+      "com.knackedup.endpoints.UserEndpoint.save" : {
+        "response" : {
+          "$ref" : "Member"
+        }
+      },
+      "com.knackedup.endpoints.UserEndpoint.listUserQuickies" : {
+        "response" : {
+          "$ref" : "QuickieCollection"
+        }
+      },
+      "com.knackedup.endpoints.FlagEndpoint.insert" : {
+        "request" : {
+          "$ref" : "Flag"
+        },
+        "response" : {
+          "$ref" : "Flag"
+        }
+      }
+    }
+  }
+}

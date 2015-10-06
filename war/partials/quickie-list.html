@@ -1,0 +1,39 @@
+<div ng-cloak ng-init="init()" ng-controller="QuickieListController">
+    <div class="page-header">
+        <h1>Search
+            <small>Find a quickie</small>
+        </h1>
+    </div>
+    <div ng-show="dataProvider.length==0">
+        <p>Your search - {{term}} - did not match any quickies.</p>
+    </div>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12 simple-panel">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" ng-show="term.length > 0" ng-enter="enterKeyHandler()" ng-click="clear()"><i class="glyphicon glyphicon-remove-circle"></i></button>
+                    </div>
+
+                    <input type="text" class="form-control" ng-enter="search()" ng-model="term" name="searchInput" placeholder="Enter a career, hobby, or quickie you find interesting" id="searchInput" focus-me="true">
+
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary" type="submit" ng-click="search()">&#032;Search&#032;
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 simple-panel">
+                <div class="gridStyle" ng-grid="gridOptions"></div>
+                <div class="clearfix controlbar">
+                    <button ng-click="init()" class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
+                    <button ng-click="goToApply(data)" ng-enter="goToApply(data)" class="btn btn-success pull-right"><span class="glyphicon glyphicon-pencil"></span>&#032;Apply&#032;</button>
+                    <button ng-click="openQuickie()" ng-enter="openQuickie()" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-list-alt"></span>&#032;Details&#032;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

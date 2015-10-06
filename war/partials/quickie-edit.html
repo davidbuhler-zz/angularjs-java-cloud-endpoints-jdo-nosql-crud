@@ -1,0 +1,79 @@
+<div ng-controller="QuickieEditController" ng-init="init();data.termsAccepted=false">
+    <div>
+        <div class="page-header">
+            <h1>Quickie Details
+                <small>Details and Benefits</small>
+            </h1>
+        </div>
+
+        <form class="css-form" novalidate ng-model="data" role="form" name="form">
+            <legend ng-show="data.quickieId==null">Add</legend>
+            <legend ng-show="data.quickieId!=null">Edit</legend>
+
+            <p>Sell your quickie to potential suitors. The quickie should describe who you are, what your knack is, and why you are offering suitors, such as advice on how to improve or professional recommendations.</p>
+
+            <div class="form-group">
+                <label for="quickieInput" class="control-label">Quickie Title</label>
+                <input type="text" id="quickieInput" ng-model="data.quickieName" class="form-control" name="quickieName"
+                       placeholder="E.g. Edit 'About Us' copy, refactor a javascript file, give branding advice"
+                       ng-minlength="5" ng-maxlength="125" focus-me="true" required/>
+                <span ng-show="submitted && form.quickieName.$error.minlength" class="error-box">Quickie Title is too short</span>
+                <span ng-show="submitted && form.quickieName.$error.maxlength" class="error-box">Quickie Title is too long</span>
+                <span ng-show="submitted && form.quickieName.$error.required" class="error-box">Quickie Title is required</span>
+            </div>
+
+            <div class="form-group">
+                <label for="organizationInput" class="control-label">Company Name</label>
+                <input type="text" id="organizationInput" ng-model="data.organization" class="form-control"
+                       name="organization" placeholder="E.g. ACME Corp" ng-minlength="2" ng-maxlength="50" required/>
+                <span ng-show="submitted && form.organization.$error.minlength" class="error-box">Company is too short</span>
+                <span ng-show="submitted && form.organization.$error.maxlength" class="error-box">Company is too long</span>
+                <span ng-show="submitted && form.organization.$error.required" class="error-box">Company is required</span>
+            </div>
+
+            <div class="form-group">
+                <label for="profileURLInput" class="control-label">LinkedIn Profile</label>
+                <input type="text"
+                       id="profileURLInput"
+                       ng-model="data.profileURL"
+                       class="form-control"
+                       ng-pattern="/^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)/"
+                       name="profileURL"
+                       placeholder="E.g. https://www.linkedin.com/in/dbuhler"
+                       ng-minlength="25"
+                       ng-maxlength="100" required/>
+                <span ng-show="submitted && form.profileURL.$error.minlength" class="error-box">LinkedIn Profile URL is too short</span>
+                <span ng-show="submitted && form.profileURL.$error.maxlength" class="error-box">LinkedIn Profile URL is too long</span>
+                <span ng-show="submitted && form.profileURL.$error.required" class="error-box">LinkedIn Profile URL is required</span>
+                <span ng-show="submitted && form.profileURL.$error.pattern" class="error-box">LinkedIn Profile URL is not a valid format</span>
+                <span class="help-inline">The link associated with your LinkedIn Public Profile</span>
+            </div>
+
+            <div class="form-group">
+                <label for="descriptionInput" class="control-label">Description</label>
+                <textarea rows="6"
+                          id="descriptionInput"
+                          ng-model="data.description"
+                          class="form-control"
+                          name="description"
+                          placeholder="A description of the quickie"
+                          ng-minlength="10"
+                          ng-maxlength="500" required></textarea>
+                <span ng-show="submitted && form.description.$error.minlength" class="error-box">Description is too short</span>
+                <span ng-show="submitted && form.description.$error.maxlength" class="error-box">Description is too long</span>
+                <span ng-show="submitted && form.description.$error.required" class="error-box">Description is required</span>
+                <span class="help-inline">Describe the quickie, provide details about your team, company and yourself. You may wish to include details about how assets are exchanged, the skills required, and how quickly you can provide feedback or a recommendation to the suitor</span>
+            </div>
+            <label class="checkbox">
+                <input type="checkbox" ng-model="data.termsAccepted" id="termsCheckBox" name="termsCheckBox"
+                       ng-checked="data.termsAccepted">I Agree to the Terms of Service
+                <span ng-show="submitted && !data.termsAccepted" class="error-box">Terms not accepted</span>
+            </label>
+
+            <div class="clearfix controlbar">
+                <button ng-click="save()" ng-enter="save()" class="btn btn-success pull-right"><span class="glyphicon glyphicon-save"></span>&#032;Save&#032;</button>
+                <button ng-click="delete()" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>&#032;Discard&#032;</button>
+            </div>
+        </form>
+    </div>
+</div>

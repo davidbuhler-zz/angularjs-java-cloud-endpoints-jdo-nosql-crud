@@ -1,0 +1,37 @@
+<div ng-cloak ng-controller="QuickieDetailsController" ng-init="init()">
+    <div class="page-header">
+        <h1>Quickie Requirements
+            <small>All of the Specifics</small>
+        </h1>
+    </div>
+    <div ng-show="data==null">
+        <p>Loading quickie...</p>
+    </div>
+    <form class="css-form styledForm" ng-model="data" novalidate role="form" id="form" ng-show="data!=null">
+        <legend>Details</legend>
+            <div class="form-group">
+                <label for="quickieStaticText" class="control-label">Organization</label>
+                <p id="quickieStaticText" class="form-control-static">{{data.organization}}</p>
+            </div>
+
+            <div class="form-group">
+                <label for="quickieNameStaticText" class="control-label">Quickie Name</label>
+                <p id="quickieNameStaticText" class="form-control-static">{{data.quickieName}}</p>
+            </div>
+
+            <div class="form-group">
+                <label for="quickieDescriptionText" class="control-label">Description</label>
+                <p id="quickieDescriptionText" class="form-control-static">{{data.description}}</p>
+            </div>
+
+            <div class="form-group">
+                <label for="quickieSponsorProfileURLText" class="control-label">Partner&#039;s LinkedIn Profile</label>
+                <p id="quickieSponsorProfileURLText" class="form-control-static">{{data.profileURL}}</p>
+            </div>
+            <div class="clearfix controlbar" ng-show="data!=null">
+                <confirm-button ng-click="doConfirm()" class="btn btn-link"><span class="glyphicon glyphicon-flag red"></span>&#032;Flag as Inappropriate&#032;</confirm-button>
+                <button ng-click="goToApply()" ng-enter="goToApply()" class="btn btn-success pull-right"><span class="glyphicon glyphicon-arrow-right"></span>&#032;Next Step&#032;</button>
+                <button ng-click="goBack()" class="btn btn-success pull-right"><span class="glyphicon glyphicon-arrow-left"></span>&#032;Previous&#032;</button>
+            </div>
+    </form>
+</div>

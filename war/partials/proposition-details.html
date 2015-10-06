@@ -1,0 +1,52 @@
+<div ng-cloak ng-controller="PropositionDetailsController" ng-init="init()">
+    <div class="page-header">
+        <h1>Proposition
+            <small>Here is what your suitor suggests</small>
+        </h1>
+    </div>
+    <div ng-show="propositionData==null">
+        <p>Loading proposition...</p>
+    </div>
+    <div class="col-xs-12">
+        <form class="form-horizontal css-form col-sm-6" ng-model="data" novalidate role="form" id="form" ng-show="propositionData!=null">
+            <legend>Details</legend>
+            <div class="form-group">
+                <label for="titleStaticText" class="col-sm-2 control-label">Proposition</label>
+
+                <div class="col-sm-4">
+                    <p id="titleStaticText" class="form-control-static">{{propositionData.title}}</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="knackStaticText" class="col-sm-2 control-label">Knack</label>
+
+                <div class="col-sm-4">
+                    <p id="knackStaticText" class="form-control-static">{{propositionData.knack}}</p>
+                </div>
+            </div>
+
+            <div class="clearfix controlbar">
+                <button ng-click="init()" class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
+                <button ng-show="userData==null" ng-click="getContactDetails()" class="btn btn-primary pull-right">&#032;Show Suitor&#032;</button>
+            </div>
+
+        </form>
+
+        <div class="col-sm-6" ng-show="userData!=null">
+            <div class="thumbnail">
+                <img src="{{userData.pictureURL}}" alt="{{userData.name}} picture">
+
+                <div class="caption">
+                    <h3>{{userData.name}}</h3>
+
+                    <p>{{userData.email}}</p>
+
+                    <div class="clearfix controlbar">
+                        <button  ng-click="sendEmail()" class="btn btn-primary pull-right">&#032;Email&#032;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

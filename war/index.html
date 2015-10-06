@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <title ng-bind="title + ' &#124; KnackedUp'"></title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="audience" content="interns,volunteers,unemployed,college students,job seekers,small businesses,managers,human resources,company recruiters"/>
+    <meta name="description" content="Turn a hobby into a career. We are the alternative to old-fashioned internship."/>
+    <meta name="keywords" content="unpaid internship,job volunteer,project volunteer,company introduction,hobby to career,job experience,apprenticeship alternatives" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="robots" content="index,follow"/>
+    <link href="css/app.css" rel="stylesheet" type="text/css"/>
+
+    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.4/toaster.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet" type="text/css"/>
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-animate.js"></script>
+    <script src="angular/angular-messages.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="angular/angular-resource.js"></script>
+
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js" type="text/javascript"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="lib/angular-spinner.js"></script>
+    <script src="lib/spin.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.4/toaster.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-49858611-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+
+    <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a></p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="components/es5-shim/es5-shim.js"></script>
+    <script src="components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <script>
+        function init() {
+            var apisToLoad = 1;
+            var gCallback = function () {
+                if (--apisToLoad == 0) {
+                    angular.element(document).ready(function () {
+                        angular.bootstrap(document, ['app']);
+                    });
+                }
+                ;
+            };
+            gapi.client.setApiKey('AIzaSyB-3Vy9HvR7A6aRHCB5lB_Wj3KrVvksj2g');
+            gapi.client.load('knackedupapp', 'v1', gCallback, '//' + window.location.host + '/_ah/api');
+        }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=init">
+        {
+            "client": {},
+            "googleapis.config": {
+                root: "https://knackedupapp.appspot.com/_ah/api"
+            }
+        }
+    </script>
+
+    <toaster-container toaster-options="{'position-class':'toast-bottom-right'}"></toaster-container>
+    <span us-spinner="{radius:20, shadow: false, lines:16, color: '#317EAC'}" spinner-key="spinner-1"></span>
+
+    <nav class="navbar navbar-default" role="navigation" ng-controller="AppController" ng-init="initState()">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.knackedup.com">KnackedUp</a>
+                <!--a class="btn btn-default btn-lg" ng-click="executeTest()" role="button">Execute</a-->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="navbar-collapse" class="collapse navbar-collapse" ng-controller="HeaderController">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/" ng-class="{ active: isActive('/')}">Find Quickies</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/quickie/new" ng-class="{ active: isActive('quickie/new')}">Add Quickie</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#/user/quickie/list">My Quickies</a>
+                            </li>
+                            <li>
+                                <a ng-click="signInSignOut()">{{signInText}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id="wrapper">
+        <div class="container" ng-view ng-cloak></div>
+        <div class="push">
+            <!--//-->
+        </div>
+        <footer>
+            <div class="container">
+                <a href="#/about">About</a>
+                <a href="#/how-it-works">How it Works</a>
+                <a href="#/terms">Terms of Use</a>
+                <a href="https://plus.google.com/+DavidBuhler" rel="publisher"></a>
+            </div>
+        </footer>
+    </div>
+    </body>
+
+</html>
