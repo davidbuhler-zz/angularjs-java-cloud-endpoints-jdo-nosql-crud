@@ -1,17 +1,19 @@
 # Knacked Up!
 
-Knacked Up! helps people looking to trade 8 hours of work for either a Recommendation on LinkedIn, or feedback on how to improve.
+## Live Application
+https://knackedupapp.appspot.com
 
-## Backstory
-Before I got into programming, I went to lots of interviews. I went door to door, passing my resume out to anyone who would feign interest. After a series of failed interviews, I asked someone in HR why she wouldn't hire me, and she was nice enough to give me some helpful advice. I bought a book on how to interview, read the book, went to an interview the next day and got my very first job out of college. Small moments of direct advice can make a big difference in the lives of others.
+Knacked Up! Trade 8 hours of work for either a Recommendation on LinkedIn, or feedback on how to improve. 
  
 ## Motto
- Get hooked up with 8 hours of work and turn a hobby into a career.
+Get hooked up with 8 hours of work and turn a hobby into a career.
 
 ## What is it?
-- Past: I was interested in learning some new frameworks and this project gives me the chance to experiment with about Google's PaaS. 
-- Present: This project now serves the needs of a Seed Application, helping others to kick-start their development efforts.
-- Future: I'll be updating the libraries, adding frameworks and services as the needs arise. If there's something you wish to add or fix, feel free to fork the project and send me a pull request.
+It's a Craigslist for college students, interns, and entry-level professionals.
+
+- Past: David Buhler was interested in learning some new frameworks and services, so he built another application. 
+- Present: This project now serves the needs of a Seed Application, helping others to kick-start their development efforts using up-and-coming languages, frameworks and services.
+- Future: It's whatever you make of it. If there's something you wish to include, fork -> pull request.
 
 ## Stack
 * AngularJS (1.x)
@@ -36,3 +38,9 @@ Before I got into programming, I went to lots of interviews. I went door to door
 6. Update the value of CLIENT_ID to reflect the web client ID you have registered in the APIs Console.
 7. Run the application, and ensure it's running by visiting your local server's address (by default localhost:8888.)
 8. Deploy your application.
+
+### Backstory
+Before David Buhler got into programming, he went to lots of interviews. He went door to door, passing out resumes. After a series of bad interviews, he asked the interviewer why she wouldn't hire him, and she was nice enough to give some helpful advice. David left the interview, walked to the bookstore across the street, bought a book on how to interview, and got a job the very next day. There's value in asking and receiving feedback.
+
+### Licensing
+The source code is provided to you using an Apache License.
