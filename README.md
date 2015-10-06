@@ -1,19 +1,15 @@
-# Knacked Up!
+# Knacked Up! - An Open Source Application
 
-## Live Application
+###Trade 8 hours of work for a Recommendation or Guidance
+
+## Website
 https://knackedupapp.appspot.com
-
-Knacked Up! Trade 8 hours of work for either a Recommendation on LinkedIn, or feedback on how to improve. 
  
 ## Motto
 Get hooked up with 8 hours of work and turn a hobby into a career.
 
 ## What is it?
-It's a Craigslist for college students, interns, and entry-level professionals.
-
-- Past: David Buhler was interested in learning some new frameworks and services, so he built another application. 
-- Present: This project now serves the needs of a Seed Application, helping others to kick-start their development efforts using up-and-coming languages, frameworks and services.
-- Future: It's whatever you make of it. If there's something you wish to include, fork -> pull request.
+It's a Craigslist for college students, interns, and entry-level professionals, and an open-source project. You're free to fork the code base, build your own project, or contribute to this project with thoughts or ideas.
 
 ## Stack
 * AngularJS (1.x)
